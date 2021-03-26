@@ -7,10 +7,10 @@ const users = [
   
   
   const toggleUserState = (allUsers, userName) => {
-    const updatedUsers = allUsers.map(user =>
+    return new Promise (resolve => {
+      const updatedUsers = allUsers.map(user =>
         user.name === userName ? { ...user, active: !user.active } : user,
       );
-    return new Promise (resolve => {
         resolve(updatedUsers);
     })
   };
